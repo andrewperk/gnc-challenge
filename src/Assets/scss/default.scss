@@ -1,0 +1,329 @@
+@import '_settings';
+
+body {
+    background-image: url('/images/sunburst.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: DINCondBold;
+    text-transform: uppercase;
+
+    header {
+        background-color: $black;
+        border-bottom: .3em solid $red;
+
+        .share {
+            background-color: $red;
+            padding-top: 10px;
+
+            p {
+                color: #fff;
+                display: inline;
+                margin-right: 20px;
+            }
+            .fab {
+                border-radius: 15px;
+                line-height: 27px;
+            }
+            .fa-facebook-square {
+                background-color: #fff;
+                color: #39589e;
+            }
+            .fa-twitter-square {
+                background-color: #00abf3;
+                color: #fff;
+            }
+        }
+    }
+
+    // Enlarges gutters for main content
+    .large-gutters {
+        margin-right: -15px;
+        margin-left: -15px;
+        > [class*="col-"] {
+            padding-right: 45px;
+            padding-left: 45px;
+        }
+    }
+
+    .main-content {
+
+        .sweepstakes {
+            font-size: 3em;
+            line-height: 20px;
+            margin-bottom: 40px;
+            margin-left: 80px;
+
+            @media (min-width: 992px) and (max-width: 1199.98px) {
+                font-size: 3.5em;
+                margin-left: 100px;
+            }
+
+            @media (min-width: 1200px) {
+                font-size: 3.5em;
+                margin-left: 170px;
+            }
+        }
+
+        h2 {
+            color: #fff;
+            background-color: $red;
+            font-size: 32px;
+            padding: 10px 10px 10px 20px;
+            text-shadow: 2px 2px 2px #000;
+            text-transform: none;
+
+            sup {
+                font-size: .3em;
+                position: relative;
+                top: -1.5em;
+                vertical-align: baseline;
+            }
+        }
+
+        /* Ribbon styling on large screens */
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .ribbon:after {
+                content: "";
+                position: absolute;
+                display: block;
+                bottom: 7.27em;
+                border: 1.8em solid $red;
+                z-index: -1;
+
+                /* Aligning Firefox */
+                @-moz-document url-prefix() {
+                    bottom: 7.28em;
+                    border: 1.83em solid $red;
+                }
+                /* Aligning Edge */
+                @supports (-ms-ime-align: auto) {
+                    bottom: 7.29em;
+                    border: 1.8em solid $red;
+                }
+            }
+
+            .ribbon:before {
+                content: "";
+                position: absolute;
+                display: block;
+                bottom: 6.3em;
+                border: 1.4em solid $red;
+                z-index: -1;
+            }
+
+            .ribbon:before {
+                left: -20.3em;
+                border-right-width: 20em;
+            }
+
+            .ribbon:after {
+                right: -2em;
+                border-left-width: 1.5em;
+                border-right-color: transparent;
+            }
+
+            .ribbon .ribbon-inner:before {
+                content: "";
+                position: absolute;
+                display: block;
+                border-style: solid;
+                border-color: #810f14 transparent transparent;
+                bottom: 6.3em;
+            }
+
+            .ribbon .ribbon-inner:before {
+                left: .3em;
+                border-width: 1em 0 0 .8em;
+            }
+        }
+
+        /* Ribbon Styling on xLarge screens */
+        @media (min-width: 1200px) {
+
+            .ribbon:after {
+                content: "";
+                position: absolute;
+                display: block;
+                bottom: 6.29em;
+                border: 1.2em solid $red;
+                z-index: -1;
+            }
+
+            .ribbon:before {
+                content: "";
+                position: absolute;
+                display: block;
+                bottom: 5.3em;
+                border: 1.2em solid $red;
+                z-index: -1;
+            }
+
+            .ribbon:before {
+                left: -20.3em;
+                border-right-width: 20em;
+            }
+
+            .ribbon:after {
+                right: -2em;
+                border-left-width: 1.5em;
+                border-right-color: transparent;
+                z-index: 1;
+            }
+
+            .ribbon .ribbon-inner:before {
+                content: "";
+                position: absolute;
+                display: block;
+                border-style: solid;
+                border-color: #810f14 transparent transparent;
+                bottom: 5.3em;
+            }
+
+            .ribbon .ribbon-inner:before {
+                left: .1em;
+                border-width: 1em 0 0 .8em;
+            }
+        }
+
+        h3 {
+            font-size: 2em;
+        }
+
+        ul {
+            font-size: 1.5em;
+
+            li.tickets {
+                background: url('/images/tickets-icon.png') left center no-repeat;
+                list-style: none;
+            }
+
+            li.airfare {
+                background: url('/images/airfare-icon.png') left center no-repeat;
+                list-style: none;
+            }
+
+            li.cash {
+                background: url('/images/cash-icon.png') left center no-repeat;
+                list-style: none;
+            }
+        }
+
+        form {
+            background-color: #fff;
+            box-shadow:-3px -3px 10px #c9caca;
+
+            label {
+                display: block;
+
+                span {
+                    font-size: .7em;
+                }
+            }
+
+            input {
+                background-color: #f1f1f3;
+                border: 1px solid #000;
+                padding: .6em;
+                width: 100%;
+            }
+
+            // Overwrite selectize.js plugin styling
+            .selectize-input {
+                background-color: #f1f1f3 !important;
+                border: 1px solid #000 !important;
+                border-radius: 0;
+                padding: .9em !important;
+                width: 100% !important;
+            }
+
+            #phone1, #phone2, #phone3 {
+                width: 70px;
+            }
+
+            .checkboxes {
+                label {
+                    display: inline;
+                    font-size: .8em;
+                }
+
+                p {
+                    font-size: .8em;
+                }
+
+                input[type="checkbox"] {
+                    margin-bottom: 10px;
+                    margin-right: 10px;
+                    width: 20px;
+                    transform: scale(2);
+                    -webkit-transform: scale(2);
+                }
+            }
+
+            input[type="submit"] {
+                display: inline;
+                width: 100px;
+            }
+
+        }
+
+
+    }
+
+    footer {
+        background-image: url('/images/hype.png');
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #8c8e90;
+        font-size: 12px;
+
+        // Fixed height for aligning content to bottom
+        .row {
+            height: 600px;
+        }
+
+        .footer-content {
+            font-family: Helvetica, Arial, sans-serif;
+            text-transform: none;
+
+            a:link, a:visited {
+                color: $red;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    // Custom Lightbox/Modal for Official rules
+    .official-rules {
+        background-color: #fff;
+        background-image: url('/images/sunburst.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #000;
+        display: none;
+        height: 100vh;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: visibility 0s lineaer 0.1s, opacity 0.3s ease;
+        width: 100%;
+        z-index: 1000;
+
+        .rules-content {
+            border: 1px solid #000;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px #000;
+            left: 50%;
+            padding: 50px;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50% , -50%);
+            -webkit-transform: translate(-50%, -50%);
+        }
+    }
+
+    /* Misc... */
+    .red-text {
+        color: $red;
+    }
+}
