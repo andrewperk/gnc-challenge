@@ -14,6 +14,13 @@ body {
         .share {
             background-color: $red;
 
+            .share-text {
+                @media (max-width: 992px) {
+                    position: relative;
+                    top: -10px;
+                }
+            }
+
             p {
                 color: #fff;
                 display: inline;

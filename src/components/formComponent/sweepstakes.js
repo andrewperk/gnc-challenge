@@ -63,7 +63,7 @@ function SweepstakeshtmlForm() {
                 <div className="col-12 col-md-8 text-center text-md-left">
                 <img src="/images/recaptcha.png" alt="Recaptcha" className="img-fluid text-center" />
                 </div>
-                <div className="col-12 col-md-4 mt-2 mt-sm-0 mt-md-0 mt-lg-0 text-md-right">
+                <div className="col-12 col-md-4 mt-2 mt-md-0 mt-lg-0 text-md-right">
                     <button type="submit" value="Enter Now" className="button-ribbon"><span className="button-ribbon-inner">Enter Now</span></button>
                 </div>
             </div>
