@@ -10,7 +10,7 @@ function Home() {
             <div className="col-12 col-lg-6 pl-0">
                 <img src="/images/gnc-ticket-to-rock.png" alt="GNC Ticket to Rock" className="img-fluid" />
                 <h1 className="red-text sweepstakes">Sweepstakes</h1>
-                <h2 className="ribbon"><span className="ribbon-inner">Enter for a chance to win a Rock Flight<sup>&reg;</sup> to a Live Nation<sup>&reg;</sup> concert of your choice!<sup>+</sup></span></h2>
+                <h2 className="ribbon pl-4 pt-2 pr-2 pb-2"><span className="ribbon-inner">Enter for a chance to win a Rock Flight<sup>&reg;</sup> to a Live Nation<sup>&reg;</sup> concert of your choice!<sup>+</sup></span></h2>
                 <h3 className="mt-4 pl-4">1 Grand Prize winner will receive:</h3>
                 <ul className="">
                     <li className="tickets pl-5 mb-3">2 tickets to a Live Nation concert in the U.S.+</li>
