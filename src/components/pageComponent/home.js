@@ -18,7 +18,7 @@ function Home() {
                     <li className="cash pl-5 mb-3">$200 cash gift card</li>
                 </ul>
             </div>
-            <div className="col-12 col-lg-6 pr-0 text-center text-md-right">
+            <div className="col-12 col-lg-6 p-lg-0 text-center text-md-right">
                 <SweepstakesForm />
             </div>
         </div>

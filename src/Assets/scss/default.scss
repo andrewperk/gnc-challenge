@@ -13,16 +13,14 @@ body {
 
         .share {
             background-color: $red;
-            padding-top: 10px;
 
             p {
                 color: #fff;
                 display: inline;
-                margin-right: 20px;
             }
             .fab {
-                border-radius: 15px;
-                line-height: 27px;
+                border-radius: 5px;
+                line-height: 39px;
             }
             .fa-facebook-square {
                 background-color: #fff;
@@ -36,12 +34,14 @@ body {
     }
 
     // Enlarges gutters for main content
-    .large-gutters {
-        margin-right: -15px;
-        margin-left: -15px;
-        > [class*="col-"] {
-            padding-right: 45px;
-            padding-left: 45px;
+    @media (min-width: 1200px) {
+        .large-gutters {
+            margin-right: -15px;
+            margin-left: -15px;
+            > [class*="col-"] {
+                padding-right: 45px;
+                padding-left: 45px;
+            }
         }
     }
 
@@ -80,108 +80,46 @@ body {
             }
         }
 
-        /* Ribbon styling on large screens */
-        @media (min-width: 992px) and (max-width: 1199.98px) {
-            .ribbon:after {
-                content: "";
-                position: absolute;
-                display: block;
-                bottom: 7.27em;
-                border: 1.8em solid $red;
-                z-index: -1;
-
-                /* Aligning Firefox */
-                @-moz-document url-prefix() {
-                    bottom: 7.28em;
-                    border: 1.83em solid $red;
-                }
-                /* Aligning Edge */
-                @supports (-ms-ime-align: auto) {
-                    bottom: 7.29em;
-                    border: 1.8em solid $red;
-                }
-            }
-
-            .ribbon:before {
-                content: "";
-                position: absolute;
-                display: block;
-                bottom: 6.3em;
-                border: 1.4em solid $red;
-                z-index: -1;
-            }
-
-            .ribbon:before {
-                left: -20.3em;
-                border-right-width: 20em;
-            }
-
-            .ribbon:after {
-                right: -2em;
-                border-left-width: 1.5em;
-                border-right-color: transparent;
-            }
-
-            .ribbon .ribbon-inner:before {
-                content: "";
-                position: absolute;
-                display: block;
-                border-style: solid;
-                border-color: #810f14 transparent transparent;
-                bottom: 6.3em;
-            }
-
-            .ribbon .ribbon-inner:before {
-                left: .3em;
-                border-width: 1em 0 0 .8em;
-            }
-        }
-
         /* Ribbon Styling on xLarge screens */
         @media (min-width: 1200px) {
 
+            .ribbon {
+                box-shadow: 2px 2px 5px #000;
+            }
+
             .ribbon:after {
                 content: "";
                 position: absolute;
                 display: block;
-                bottom: 6.29em;
-                border: 1.2em solid $red;
+                bottom: 9.83em;
+                border: 1.5em solid $red;
                 z-index: -1;
-            }
-
-            .ribbon:before {
-                content: "";
-                position: absolute;
-                display: block;
-                bottom: 5.3em;
-                border: 1.2em solid $red;
-                z-index: -1;
-            }
-
-            .ribbon:before {
-                left: -20.3em;
-                border-right-width: 20em;
-            }
-
-            .ribbon:after {
-                right: -2em;
+                right: -.3em;
                 border-left-width: 1.5em;
                 border-right-color: transparent;
                 z-index: 1;
             }
 
+            .ribbon:before {
+                content: "";
+                position: absolute;
+                display: block;
+                bottom: 9em;
+                border: 1.5em solid $red;
+                z-index: -1;
+                left: -25.5em;
+                border-right-width: 25em;
+            }
+
             .ribbon .ribbon-inner:before {
                 content: "";
                 position: absolute;
                 display: block;
                 border-style: solid;
                 border-color: #810f14 transparent transparent;
-                bottom: 5.3em;
-            }
-
-            .ribbon .ribbon-inner:before {
-                left: .1em;
-                border-width: 1em 0 0 .8em;
+                bottom: 9em;
+                left: .2em;
+                border-width: .8em 0 0 .8em;
             }
         }
 
@@ -211,6 +149,7 @@ body {
         form {
             background-color: #fff;
             box-shadow:-3px -3px 10px #c9caca;
+            z-index: 3;
 
             label {
                 display: block;
@@ -259,9 +198,95 @@ body {
                 }
             }
 
-            input[type="submit"] {
-                display: inline;
-                width: 100px;
+            /* Button Styling */
+            button {
+                background-color: $red;
+                border: none;
+                color: #fff;
+                padding: 14px 24px;
+                white-space: nowrap;
+            }
+
+            /* Button ribbon edge */
+            .button-ribbon:after {
+                content: "";
+                position: absolute;
+                display: block;
+            }
+
+            /* Dark corner of ribbon */
+            .button-ribbon .button-ribbon-inner:after {
+                content: "";
+                position: absolute;
+                display: block;
+                border-style: solid;
+                border-color: #810f14 transparent transparent;
+            }
+
+            // Position ribbon for md screens
+            @media (min-width: 768px) {
+
+                button {
+                    font-size: 2.5em;
+                    margin-left: 35px;
+                }
+
+                .button-ribbon:after {
+                    bottom: 1.01em;
+                    border: 1.1em solid $red;
+                    left: 5.4em;
+                    border-right-width: 1px;
+                }
+
+                .button-ribbon .button-ribbon-inner:after {
+                    bottom: .51em;
+                    left: 5.9em;
+                    border-width: .5em 0.6em 0 0;
+                }
+            }
+
+            // Position ribbon for lg screens
+            @media (min-width: 992px) {
+
+                button {
+                    font-size: 2em;
+                    margin-left: 0;
+                }
+
+                .button-ribbon:after {
+                    bottom: .9em;
+                    border: 1.15em solid $red;
+                    left: 4.8em;
+                    border-right-width: 1px;
+                }
+
+                .button-ribbon .button-ribbon-inner:after {
+                    bottom: .4em;
+                    left: 5.35em;
+                    border-width: .5em 0.6em 0 0;
+                }
+            }
+
+            // Position ribbon for xl screens
+            @media (min-width: 1200px) {
+
+                button {
+                    font-size: 2.5em;
+                    margin-left: 0;
+                }
+
+                .button-ribbon:after {
+                    bottom: .99em;
+                    border: 1.1em solid $red;
+                    left: 4.5em;
+                    border-right-width: 1px;
+                }
+
+                .button-ribbon .button-ribbon-inner:after {
+                    bottom: .49em;
+                    left: 5em;
+                    border-width: .5em 0.6em 0 0;
+                }
             }
 
         }
@@ -270,25 +295,40 @@ body {
     }
 
     footer {
-        background-image: url('/images/hype.png');
-        background-position: left bottom;
+        background-image: url('/images/hype-mobile.png');
+        background-position: center bottom;
         background-repeat: no-repeat;
         background-size: cover;
         color: #8c8e90;
-        font-size: 12px;
+        font-size: 11px;
+
+        @media (min-width: 415px) {
+            background-image: url('/images/hype.png');
+        }
 
         // Fixed height for aligning content to bottom
         .row {
             height: 600px;
-        }
 
-        .footer-content {
-            font-family: Helvetica, Arial, sans-serif;
-            text-transform: none;
+            @media (min-width: 768px) {
+                font-size: 13px;
+            }
 
-            a:link, a:visited {
-                color: $red;
-                text-decoration: underline;
+            // Prevents larger screens from cutting fingers off
+            @media (min-width: 1930px) {
+                height: 800px;
+                font-size: 14px;
+                line-height: 34px;
+            }
+
+            .footer-content {
+                font-family: Helvetica, Arial, sans-serif;
+                text-transform: none;
+
+                a:link, a:visited {
+                    color: $red;
+                    text-decoration: underline;
+                }
             }
         }
     }

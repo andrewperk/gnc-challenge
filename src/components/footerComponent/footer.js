@@ -4,7 +4,7 @@ import React from 'react';
 function Footer() {
   return (
     <footer>
-        <div className="container pl-0">
+        <div className="container pl-m-0">
             <div className="row align-items-end">
                 <div className="col-12 footer-content">
                     <p>+Live Nation produced  promoted concert at an owned and operated venue in the U.S. Tickets are subject to program availability, venue capacity and age restrictions.</p>
